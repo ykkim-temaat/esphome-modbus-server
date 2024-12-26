@@ -32,13 +32,13 @@ class ModbusServer : public esphome::uart::UARTDevice, public Component, public 
   /// @param address the slave address this instance will respond as
   void set_address(uint8_t address);
 
-  /// @brief Sets the DE pin and toggles it on read/write
-  /// @param pin_de is the pin to set LOW when transmitting
-  void set_de_pin(uint8_t pin_de);
+  // /// @brief Sets the DE pin and toggles it on read/write
+  // /// @param pin_de is the pin to set LOW when transmitting
+  // void set_de_pin(uint8_t pin_de);
 
-  /// @brief Sets the RE pin and toggles it on read/write
-  /// @param pin_re is the pin to set LOW when reading
-  void set_re_pin(uint8_t pin_re);
+  // /// @brief Sets the RE pin and toggles it on read/write
+  // /// @param pin_re is the pin to set LOW when reading
+  // void set_re_pin(uint8_t pin_re);
 
   /// @brief Adds a new range of holding registers
   /// @param start_address Address of the first register
@@ -108,8 +108,8 @@ class ModbusServer : public esphome::uart::UARTDevice, public Component, public 
   void flush();
 
  private:
-  uint8_t re_pin;
-  uint8_t de_pin;
+  // uint8_t re_pin;
+  // uint8_t de_pin;
   bool sending;
   ModbusRTU mb;  // ModbusRTU instance, the man behind the curtain
 };

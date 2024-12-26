@@ -8,8 +8,8 @@ CONF_DEFAULT = "default"
 CONF_NUMBER = "number"
 CONF_ON_READ = "on_read"
 CONF_ON_WRITE = "on_write"
-CONF_RE_PIN = "re_pin"
-CONF_DE_PIN = "de_pin"
+# CONF_RE_PIN = "re_pin"
+# CONF_DE_PIN = "de_pin"
 
 modbus_server_ns = cg.esphome_ns.namespace("modbus_server")
 ModbusDeviceComponent = modbus_server_ns.class_("ModbusServer", cg.Component)
@@ -21,8 +21,8 @@ CONFIG_SCHEMA = (
         {
             cv.GenerateID(): cv.declare_id(ModbusDeviceComponent),
             cv.Required(CONF_ADDRESS): cv.positive_int,
-            cv.Optional(CONF_RE_PIN): cv.positive_int,
-            cv.Optional(CONF_DE_PIN): cv.positive_int,
+            # cv.Optional(CONF_RE_PIN): cv.positive_int,
+            # cv.Optional(CONF_DE_PIN): cv.positive_int,
             cv.Optional("holding_registers"): cv.ensure_list(
                 cv.Schema(
                     {
@@ -63,10 +63,10 @@ async def to_code(config):
     server = cg.new_Pvariable(id)
     cg.add(server.set_uart_parent(uart))
     cg.add(server.set_address(config[CONF_ADDRESS]))
-    if "re_pin" in config:
-        cg.add(server.set_re_pin(config[CONF_RE_PIN]))
-    if "de_pin" in config:
-        cg.add(server.set_de_pin(config[CONF_DE_PIN]))
+    # if "re_pin" in config:
+    #     cg.add(server.set_re_pin(config[CONF_RE_PIN]))
+    # if "de_pin" in config:
+    #     cg.add(server.set_de_pin(config[CONF_DE_PIN]))
     if "holding_registers" in config:
         for reg in config["holding_registers"]:
             cg.add(
