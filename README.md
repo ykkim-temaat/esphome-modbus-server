@@ -1,12 +1,11 @@
 # esphome-modbus-server
 ESPHome Modbus Server component
 
-> This is a fork from @jpeletier and merge from @arpiecodes, and some error fixed using for esp32.
->> https://github.com/epiclabs-uc/esphome-modbus-server : esphome-modbus-server (modbus holding registor only; read & write register)
->> https://github.com/arpiecodes/esphome-modbus-server : added modbus function code 4 (modbus input resistor; read-only register)
-
->>> Error log (using esp32-devkit v1)
->>> [16:12:06][D][esp-idf:000]: E (1309775) gpio: gpio_set_level(226): GPIO output gpio_num error
+> This is a fork from @jpeletier and merge from @arpiecodes, and some error fixed using for esp32.  
+>> https://github.com/epiclabs-uc/esphome-modbus-server : esphome-modbus-server (modbus holding registor only; read & write register)  
+>> https://github.com/arpiecodes/esphome-modbus-server : added modbus function code 4 (modbus input resistor; read-only register)  
+>>> Error log (using esp32-devkit v1)  
+>>> [16:12:06][D][esp-idf:000]: E (1309775) gpio: gpio_set_level(226): GPIO output gpio_num error  
 
 Example configuration:
 
