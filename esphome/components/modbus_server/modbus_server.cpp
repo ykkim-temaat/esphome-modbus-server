@@ -69,17 +69,17 @@ void ModbusServer::on_write_input_register(uint16_t address, cbOnReadWrite cb, u
       IREG(address), [cb](TRegister *reg, uint16_t val) -> uint16_t { return cb(reg->address.address, val); }, numregs);
 }
 
-// // Stream class implementation:
-// size_t ModbusServer::write(uint8_t data) {
-//   if ((re_pin || de_pin) && !sending) {
-//     if (re_pin)
-//       digitalWrite(re_pin, HIGH);
-//     if (de_pin)
-//       digitalWrite(de_pin, HIGH);
-//     sending = true;
-//   }
-//   return uart::UARTDevice::write(data);
-// }
+// Stream class implementation:
+size_t ModbusServer::write(uint8_t data) {
+  // if ((re_pin || de_pin) && !sending) {
+  //   if (re_pin)
+  //     digitalWrite(re_pin, HIGH);
+  //   if (de_pin)
+  //     digitalWrite(de_pin, HIGH);
+  //   sending = true;
+  // }
+  return uart::UARTDevice::write(data);
+}
 
 int ModbusServer::available() { return uart::UARTDevice::available(); }
 int ModbusServer::read() { return uart::UARTDevice::read(); }
