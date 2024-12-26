@@ -110,7 +110,7 @@ class ModbusServer : public esphome::uart::UARTDevice, public Component, public 
  private:
   // uint8_t re_pin;
   // uint8_t de_pin;
-  bool sending;
+  // bool sending;
   ModbusRTU mb;  // ModbusRTU instance, the man behind the curtain
 };
 
